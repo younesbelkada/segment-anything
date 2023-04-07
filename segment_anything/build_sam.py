@@ -109,7 +109,7 @@ def _build_sam(
         if os.path.isfile(checkpoint):
             cached_checkpoint = checkpoint
         else:
-            # it will throw an exception if the checkpoint is not found
+            # it will throw an exception if the checkpoint is not found or the path is not valid
             cached_checkpoint = hf_hub_download("ybelkada/segment-anything", f"checkpoints/{checkpoint}")   
         with open(cached_checkpoint, "rb") as f:
             state_dict = torch.load(f)
