@@ -106,7 +106,7 @@ def _build_sam(
     )
     sam.eval()
     if checkpoint is not None:
-        if not os.path.exists(checkpoint):
+        if not os.path.isfile(checkpoint):
             try:
                 checkpoint = hf_hub_download("ybelkada/segment-anything", f"checkpoints/{checkpoint}")
             except:
